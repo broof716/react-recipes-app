@@ -34,12 +34,14 @@ function App() {
 
   return (
     <div className="App">
+      <h1 className="recipes-app">React Recipes Application</h1>
       <form onSubmit={getSearch} className="search-form">
         <input className="search-bar" type="text" value={search} onChange={updateSearch} />
         <button className="search-button" type="submit">
           Search
         </button>
       </form>
+      <div className="recipes">
       {recipes.map(recipe => (
         <Recipe 
         key={recipe.recipe.label}
@@ -49,6 +51,7 @@ function App() {
         ingredients={recipe.recipe.ingredients}
         />
       ))}
+      </div>
     </div>
   );
 }
